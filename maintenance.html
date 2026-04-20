@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maintenance — ForageWild</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .maint-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 2rem;
+    }
+    .maint-bg { position: fixed; inset: 0; background-size: cover; background-position: center; z-index: 0; }
+    .maint-ov { position: fixed; inset: 0; background: rgba(6,16,6,.82); z-index: 1; }
+    .maint-c  { position: relative; z-index: 2; color: #fff; max-width: 560px; }
+    .maint-icon { font-size: 4.5rem; display: block; margin-bottom: 1.2rem; }
+    .pbar  { height: 8px; background: rgba(255,255,255,.15); border-radius: 50px; overflow: hidden; margin: 1.6rem auto; max-width: 380px; }
+    .pfill { height: 100%; width: 67%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 50px; animation: panim 2.5s ease-in-out infinite alternate; }
+    @keyframes panim { from { width: 61%; } to { width: 75%; } }
+    .countdown { display: flex; gap: 1.5rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap; }
+    .cdown-item { text-align: center; }
+    .cdown-num  { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: #fff; line-height: 1; display: block; }
+    .cdown-lbl  { font-size: 13px; color: rgba(255,255,255,.55); }
+  </style>
+</head>
+<body>
+  <div class="maint-bg" style="background-image:url('https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=1400&q=80');"></div>
+  <div class="maint-ov"></div>
+  <div class="maint-wrap">
+    <div class="maint-c">
+      <span class="maint-icon">🔧</span>
+      <h1 style="color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:.7rem;">We're Tending the Forest</h1>
+      <p style="color:rgba(255,255,255,.78);max-width:460px;margin:0 auto .4rem;">ForageWild is undergoing scheduled maintenance to bring you an even better experience.</p>
+      <p style="color:rgba(255,255,255,.55);">Back online <strong style="color:#fff;">Sunday, 6:00 AM IST</strong></p>
+
+      <div class="pbar"><div class="pfill" id="pfill"></div></div>
+      <p style="color:rgba(255,255,255,.5);font-size:14px;">67% complete</p>
+
+      <div class="countdown">
+        <div class="cdown-item"><span class="cdown-num" id="ch">08</span><span class="cdown-lbl">Hours</span></div>
+        <div class="cdown-item"><span class="cdown-num" id="cm">34</span><span class="cdown-lbl">Minutes</span></div>
+        <div class="cdown-item"><span class="cdown-num" id="cs">22</span><span class="cdown-lbl">Seconds</span></div>
+      </div>
+
+      <p style="color:rgba(255,255,255,.55);margin-top:.5rem;">Questions? <a href="mailto:hello@foragewild.in" style="color:var(--accent-l);">hello@foragewild.in</a></p>
+      <div style="margin-top:1.8rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a class="btn-g" href="index.html" style="font-size:15px!important;padding:.5rem 1.4rem;">Preview Site</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => { initTheme(); initDir(); });
+    // countdown demo
+    let h = 8, m = 34, s = 22;
+    setInterval(() => {
+      s--;
+      if (s < 0) { s = 59; m--; }
+      if (m < 0) { m = 59; h--; }
+      if (h < 0) h = 0;
+      document.getElementById('ch').textContent = String(h).padStart(2,'0');
+      document.getElementById('cm').textContent = String(m).padStart(2,'0');
+      document.getElementById('cs').textContent = String(s).padStart(2,'0');
+    }, 1000);
+  </script>
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" title="Back to top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+</body>
+</html>
