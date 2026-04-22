@@ -819,6 +819,10 @@ select.finput {
 @media (max-width: 768px) {
   .hero   { min-height: auto; }
   .fb1, .fb2 { display: none !important; }
+   .hero-imgcard
+   {
+      margin-top:20px !important; 
+   }
   .hero-c { padding: 3rem 30px; }
   .sec    { padding: 3.5rem 0; }
   .bform  { padding: 1.7rem; }
