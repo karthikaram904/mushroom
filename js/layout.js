@@ -93,7 +93,7 @@ function injectFooter() {
       <div class="row g-4">
         <!-- Brand -->
         <div class="col-lg-4 col-md-6">
-          <div class="flogo"><img src="images/logo.png" alt="ForageWild" style="width:110px;filter:brightness(0) invert(1);"></div>
+          <div class="flogo"><a href="index.html"><img src="images/logo.png" alt="ForageWild" style="width:110px;filter:brightness(0) invert(1);"></a></div>
           <p class="fdesc">South India's most trusted guided mushroom foraging and wild edible tours. Safe, educational, transformative.</p>
           <div style="margin-top:1.4rem;display:flex;flex-direction:column;gap:.7rem;">
             <div style="display:flex;align-items:flex-start;gap:.7rem;color:rgba(255,255,255,.7);">

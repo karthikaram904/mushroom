@@ -808,6 +808,9 @@ select.finput {
   .hbtn           { display: flex !important; }
   .nctrl .ibtn      { display: none !important; }
   .nctrl .btn-login { display: none !important; }
+  .col-lg-5.offset-lg-1.hero-imgwrap {
+  margin: 0px !important;
+}
 }
 @media (min-width: 1025px) {
   .hbtn  { display: none !important; }
@@ -815,13 +818,17 @@ select.finput {
 }
 @media (max-width: 768px) {
   .hero   { min-height: auto; }
-  .hero-imgwrap, .fb1, .fb2 { display: none !important; }
-  .hero-c { padding: 3rem 0; }
+  .fb1, .fb2 { display: none !important; }
+  .hero-c { padding: 3rem 30px; }
   .sec    { padding: 3.5rem 0; }
   .bform  { padding: 1.7rem; }
   .errcode { font-size: 5rem; }
   .gal-grid { grid-template-columns: repeat(2, 1fr); }
   .img-h420 { height: 280px; }
+  .col-lg-5.offset-lg-1.hero-imgwrap {
+  width: 80%;
+  display: block !important;
+}
 }
 @media (max-width: 480px) {
   .hero-stats { gap: 1.2rem; }
@@ -830,7 +837,7 @@ select.finput {
 .nbrand img {
   width: 110px;
 }
-[data-theme="dark"] .nbrand img {
+[data-theme="dark"] .nbrand img,[data-theme="dark"] .auth-logo img{
   filter: brightness(0) invert(1);
 }
 
